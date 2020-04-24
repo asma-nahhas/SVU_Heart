@@ -28,6 +28,8 @@ class ArticleController extends Controller
 
      }
 
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -50,7 +52,7 @@ class ArticleController extends Controller
         $this->validate($request,[
             'Name'=>'required',
             'Body'=>'required',
-            'Image'=>'required|image|max:2048|mimes:jpg,png'
+            'Image'=>'required|image|max:2048|mimes:jpg,png,JPG,jpeg,PNG'
 
         ]);
 

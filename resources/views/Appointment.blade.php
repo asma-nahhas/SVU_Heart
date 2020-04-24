@@ -264,10 +264,12 @@ Add Appointment
           <br/>
           </div>
            
-            <textarea type="text" class="form-control" name="note" rows="30" cols="50"   value="Enter your Note..."> </textarea> 
-      
-            <textarea  type="text" class="form-control" name="response" rows="30" cols="50" value="Response" > </textarea> 
-        
+              <div class="form-group">
+            <textarea type="text" class="form-control" name="note" rows="30" cols="50"   placeholder="Enter your Note..."> </textarea> 
+          </div>
+              <div class="form-group">
+            <textarea  type="text" class="form-control" name="response" rows="20" cols="50" placeholder="Response" > </textarea> 
+          </div>
 
 
 

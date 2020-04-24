@@ -48,6 +48,102 @@
         </div>
     </section>
     <!-- banner part start-->
+       <!--::SVU Team Members start::-->
+    <section class="doctor_part section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <div class="section_tittle text-center">
+                        <h2> SVU Team Members</h2>
+                      </div>
+                    </div>
+                  </div>
+                              <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <img src="img/team/Asma.jpg" alt="doctor">
+                            <div class="social_icon">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/asas.asum"> <i class="ti-facebook"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-twitter-alt"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-instagram"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-skype"></i> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <h3>Asma Nahhas</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                        <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <img src="img/team/ibrahim.jpg" alt="doctor">
+                            <div class="social_icon">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/ibrahim.arafeeh"> <i class="ti-facebook"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-twitter-alt"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-instagram"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-skype"></i> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <h3>Ibrahim Arafeh</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                        <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <img src="img/team/Nour.jpg" alt="doctor">
+                            <div class="social_icon">
+                                <ul>
+                                    <li><a href="#"> <i class="ti-facebook"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-twitter-alt"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-instagram"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-skype"></i> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <h3>Nour Jaber</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                        <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <img src="img/team/haidar.jpg" alt="doctor">
+                            <div class="social_icon">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/haider.ibrahem.3229"> <i class="ti-facebook"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-twitter-alt"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-instagram"></i> </a></li>
+                                    <li><a href="#"> <i class="ti-skype"></i> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <h3>Haidar Ibrahim</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+          </div>
+        </section>
 
       <!-- Banner Ends Here -->
 
@@ -316,6 +412,7 @@
         </div>
     </section>
     <!-- our depertment part end-->
+
 
     <!--::doctor_part start::-->
     <section class="doctor_part section_padding">

@@ -67,6 +67,22 @@ Route::get('/consultation', function () {
     return view('consultation');
 });
 
+Route::get('ArticleView/{id?}', function ($id=0) {
+
+    return View::make('Article_View',['id'=>$id]);
+
+});
+
+Route::get('ArticleView', function () {
+
+    return View::make('Article_View');
+
+});
+
+
+
+
+
 
 
 Route::get('/My_Appointment','AppointmentController@index');

@@ -40,6 +40,9 @@ class AppointmentController extends Controller
         public function store2(Request $request)
     {
         //
+
+                $this->middleware('auth');
+
           $request->validate([
                     'captcha'=>'required|captcha'
                 ],['captcha.captcha'=>'Invalid captcha code.']);
