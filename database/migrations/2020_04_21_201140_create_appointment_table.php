@@ -17,7 +17,7 @@ class CreateAppointmentTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('emailAddress');
-            $table->string('address');
+            $table->string('address')->nullable();
             $table->string('phoneNumber');
             $table->string('gender');
             $table->string('age');
@@ -27,8 +27,8 @@ class CreateAppointmentTable extends Migration
             $table->string('rest_electro');
             $table->string('exerscice_angina');
             $table->string('blood_sugar');
-            $table->longText('note');
-            $table->longText('response');
+            $table->longText('note')->nullable();
+            $table->longText('response')->nullable();
             $table->timestamps();
         });
     }
