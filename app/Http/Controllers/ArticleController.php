@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Redirect,Response,DB,Config;
 use Yajra\DataTables\Services\DataTables;
+use Illuminate\Support\Facades\Auth;
 
 
 use App\Article;
@@ -21,7 +22,8 @@ class ArticleController extends Controller
     public function index()
     {
         //
-            $data = Article::orderBy('created_at','desc')->paginate(8);
+        $data = DB::select('select * from articles order by created_at desc');
+          //  $data = Article::orderBy('created_at','desc')->paginate(8);
         return view('Article', compact('data'));
 
 
@@ -49,6 +51,7 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         //
+        if (Auth::check()) {
         $this->validate($request,[
             'Name'=>'required',
             'Body'=>'required',
@@ -64,12 +67,18 @@ class ArticleController extends Controller
         $article=new Article;
         $article->title=$request->input('Name');
         $article->body=$request->input('Body');
+        $article->views_count=0;
         $article->image=$new_name;
 
         $article->save();
 
         return redirect('Article')->with('success','Data Saved');
+       }else{
+        
+        return redirect('login');
 
+
+        }
 
     }
 

@@ -21,6 +21,7 @@
 
 @endif
 
+
     <!-- banner part start-->
     <section class="banner_part">
         <div class="container">
@@ -180,7 +181,7 @@
               <div class="down-content">
                 <a href="{{url('blog')}}"><h4>Healthy food for heart patients</h4></a>
                 <p>
-                   There may be beneficial foods for heart patients, and other foods harmful for heart patients, but a healthy diet for heart patients...</p>
+                   There may be beneficial foods for heart patients, and other foods harmful for heart patients, but a healthy diet for heart patients and heaslth day style...</p>
                 <ul class="stars">
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
@@ -219,7 +220,7 @@
               <div class="down-content">
                 <a href="{{url('blog')}}"><h4>Food that strengthens the heart muscle</h4></a>
                 <p>
-                    There are some foods that strengthen the heart and improve its work due to the presence of some important nutrients for cardiovascular health. </p>
+                    There are some foods that strengthen the heart and improve its work due to the presence of some important nutrients for cardiovascular health. heart and brain diseases.</p>
                 <ul class="stars">
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
@@ -253,7 +254,7 @@
               <div class="down-content">
                 <a href="{{url('blog')}}"><h4>The advantages and risks of X-ray imaging</h4></a>
                 <p>
-                    There are many advantages to MRI diagnostics and heart imaging compared to other methods of cardiac imaging such as ultrasound or CT scan. The magnetic resonance imaging of the heart does not use any ionizing radiation. .</p>
+                    There are many advantages to MRI diagnostics and heart imaging compared to other methods of cardiac imaging such as ultrasound or CT scan. The magnetic resonance imaging of the heart .</p>
                 <ul class="stars">
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
@@ -521,7 +522,7 @@
             <div class="row align-items-center regervation_content">
                 <div class="col-lg-7">
                     <div class="regervation_part_iner">
-                        <form  name="AppointmentForm"  id="AppointmentForm" action="{{  action('AppointmentController@store2') }}"  method="POST" >
+                        <form  name="AppointmentForm"  id="AppointmentForm" action="{{  action('AppointmentController@store2') }}" onsubmit="return getResult(event)" method="POST" >
                             {{ csrf_field() }}
                             <h2>Make an Appointment</h2>
                             <div class="form-row">
@@ -578,6 +579,9 @@
                                <div class="form-group time_icon col-md-6">
                                     <input class="form-control" type="Number" placeholder="Max heart rate" id="max_heart_rate" name="max_heart_rate" />
                                 </div>
+                                
+                                     <input class="form-control" type="hidden"  id="response" name="response" />
+
 
                                  <div class="form-group col-md-6">
                                     <select type="text" class="form-control" id="rest_electro" name="rest_electro" 
@@ -594,8 +598,8 @@
                                     <select type="text" class="form-control" id="exerscice_angina" name="exerscice_angina" 
                                          required>
                                          <option value="">Exercice Angina</option>
-                                         <option value="Y">Yes</option>
-                                        <option value="N">No</option>
+                                         <option value="yes">Yes</option>
+                                        <option value="no">No</option>
                                     </select>
                                 </div>
 
@@ -604,8 +608,8 @@
                                     <select type="text" class="form-control" id="blood_sugar" name="blood_sugar" 
                                          required>
                                          <option value="">Blood Sugar</option>
-                                         <option value="F">Yes</option>
-                                        <option value="M">No</option>
+                                         <option value="TRUE">Yes</option>
+                                        <option value="FALSE">No</option>
                                     </select>
                                 </div>
 
@@ -631,7 +635,7 @@
                                           </div>
                             <!-- End Captcha-->
                             <div class="regerv_btn">
-                              <input type="submit" name="submit" class="btn_1"  id="AppBut" value="Make an Appointment" />
+                              <input type="submit" name="submit" class="btn_1"  id="AppBut"  value="Make an Appointment" />
                             </div>
                         </form>
                     </div>
@@ -697,10 +701,11 @@
     </section>
     <!--::blog_part end::-->
 
+
+
         @endsection
 
         @extends("Footer")
-
 
 <script type="text/javascript">
   
@@ -779,6 +784,86 @@
     }
 
    });
+
+  }
+
+
+  function getResult(event){
+
+    var age=$("#age").val();
+    var method=$("#method").val();
+    var chest_pain_type=$("#chest_pain_type").val();
+    var rest_blood_pressure=$("#rest_blood_pressure").val();
+    var blood_sugar=$("#blood_sugar").val();
+    var rest_electro=$("#rest_electro").val();
+    var max_heart_rate=$("#max_heart_rate").val();
+    var exercice_angina=$("#exerscice_angina").val();
+
+
+   if(method!='Expert'){
+   event.preventDefault();
+
+
+       $.ajax({
+
+    type:'GET',
+    header:{'Access-Control-Allow-Origin':'*'},
+    //url:'http://127.0.0.1:5000/result',
+    url:'https://dry-beach-77682.herokuapp.com/result',
+    data: {
+      age: age,
+      method:method,
+      chest_pain_type:chest_pain_type,
+      rest_blood_pressure:rest_blood_pressure,
+      blood_sugar:blood_sugar,
+      rest_electro:rest_electro,
+      max_heart_rate:max_heart_rate,
+      exercice_angina:exercice_angina
+    },
+    success:function(data){
+
+
+
+      if(data=='negative'){
+    
+
+                 swal("Result By Selected Algorithm", ", Your heart is good , stay at home :) ", "success");
+                $("#response").val("Your heart is good , stay at home :) ");
+            }
+      else
+      {
+               swal("Result By Selected Algorithm", ", Your heart is tired, you need to consult a doctor", "warning");
+              $("#response").val("Your heart is tired, you need to consult a doctor");
+
+        }
+
+
+    },
+    error:function(jqXHR, exception){
+
+              var msg = '';
+        if (jqXHR.status === 0) {
+            msg = 'Not connect.\n Verify Network.'+ jqXHR.responseText;
+        } else if (jqXHR.status == 404) {
+            msg = 'Requested page not found. [404]';
+        } else if (jqXHR.status == 500) {
+            msg = 'Internal Server Error [500].';
+        } else if (exception === 'parsererror') {
+            msg = 'Requested JSON parse failed.';
+        } else if (exception === 'timeout') {
+            msg = 'Time out error.';
+        } else if (exception === 'abort') {
+            msg = 'Ajax request aborted.';
+        } else {
+            msg = 'Uncaught Error.\n' + jqXHR.responseText;
+        }
+
+        alert(msg);
+    }
+  });
+
+     }
+
 
   }
 

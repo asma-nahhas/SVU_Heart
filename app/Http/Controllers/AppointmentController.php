@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
+use Illuminate\Support\Facades\Auth;
 use Redirect,Response,DB,Config;
 use Yajra\DataTables\Services\DataTables;
 
@@ -41,13 +41,21 @@ class AppointmentController extends Controller
     {
         //
 
-                $this->middleware('auth');
+if (Auth::check()) {
 
+    $method=$request->input('method');
+
+    if($method=='Expert'){
           $request->validate([
                     'captcha'=>'required|captcha'
                 ],['captcha.captcha'=>'Invalid captcha code.']);
 
+         $user_id= Auth::user()->id;
+
         $appointment=new Appointment;
+
+        $appointment->user_id=$user_id;
+
         $appointment->name=$request->input('Name');
 
         $appointment->emailAddress=$request->input('emailAddress');
@@ -83,6 +91,12 @@ class AppointmentController extends Controller
         return redirect('index#Appointment')->with('success','Data Saved');
 
     }
+            }else{
+        return redirect('login');
+
+
+        }
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -93,10 +107,15 @@ class AppointmentController extends Controller
     public function store(Request $request)
     {
         //
-        
+        if (Auth::check()) {
+
+           $user_id= Auth::user()->id;
+
 
         $appointment=new Appointment;
         $appointment->name=$request->input('Name');
+
+        $appointment->user_id=$user_id;
 
         $appointment->emailAddress=$request->input('emailAddress');
 
@@ -129,6 +148,11 @@ class AppointmentController extends Controller
         $appointment->save();
 
         return redirect('Appointment')->with('success','Data Saved');
+            }else{
+        return redirect('login');
+
+
+        }
 
     }
 

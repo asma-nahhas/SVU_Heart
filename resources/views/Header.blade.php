@@ -87,6 +87,9 @@
                 margin-bottom: 30px;
             }
         </style>
+
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 
 <body>

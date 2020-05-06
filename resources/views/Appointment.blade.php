@@ -100,7 +100,7 @@ tr:nth-child(even) {
         <br/>
         <br/>
 
-            <table class="table  table-stripped" id="articleTable">
+            <table class="table  table-stripped" id="appointmentTable">
                 <thead>
                     <tr>
                         <th nowrap>Name</th>

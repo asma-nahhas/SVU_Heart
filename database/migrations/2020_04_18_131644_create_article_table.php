@@ -18,6 +18,7 @@ class CreateArticleTable extends Migration
             $table->string('title');
             $table->longText('body');
             $table->string('image');
+            $table->bigInteger('views_count');
             $table->timestamps();
         });
     }

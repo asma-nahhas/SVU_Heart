@@ -97,7 +97,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                  @foreach($data->all() as $element)
+                  @foreach(\App\Article::all() as $element)
                   <tr>
                   <td>{{$element->title}}</td>
                   <td>{{$element->body}}</td>
