@@ -80,7 +80,7 @@ class ArticleController extends Controller
         $article=new Article;
         $article->title=$request->input('Name');
         $article->body=$request->input('Body');
-        $article->views_count=0;
+       // $article->views_count=0;
         $article->image=$new_name;
 
         $article->save();
