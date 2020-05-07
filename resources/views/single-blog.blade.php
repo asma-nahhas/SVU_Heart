@@ -27,7 +27,7 @@
             <div class="col-lg-8 posts-list">
                <div class="single-post">
                   <div class="feature-img">
-                     <img class="img-fluid" src="/img/blog/Heart_Blog_{{$postId ?? ''}}.jpg" alt="">
+                     <img class="img-fluid" src="/img/blog/Heart_Blog_1.jpg" alt="">
                   </div>
                   <div class="blog_details">
                      <h2>{{$article->title ?? 'Causes of heart disease'}}

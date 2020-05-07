@@ -60,6 +60,10 @@ Route::get('/blog', function () {
 });
 
 
+Route::get('/single-blog', function () {
+    return view('single-blog');
+});
+
 Route::get('/contact', function () {
     return view('contact');
 });

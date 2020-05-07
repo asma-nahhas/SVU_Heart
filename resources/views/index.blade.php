@@ -153,7 +153,7 @@
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Most Read Articles</h2>
-              <a href="products.html">view all articles <i class="fa fa-angle-right"></i></a>
+              <a href="{{url('blog')}}">view all articles <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
 
