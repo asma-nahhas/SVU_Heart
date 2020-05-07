@@ -156,13 +156,15 @@
               <a href="products.html">view all articles <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
+
+           @foreach(\App\Article::all() as $element)
           <div class="col-md-4">
             <div class="product-item">
-              <a href="#"><img src="/img/blog/Heart_Blog_1.jpg" alt=""></a>
+              <a href="#"><img src="/img/blog/Heart_Blog_{{$element->id}}.jpg" alt=""></a>
               <div class="down-content">
-                <a href="{{url('ArticleShow',1)}}"><h4>Your guide to lowering blood cholesterol</h4></a>
+                <a href="{{url('ArticleShow',$element->id)}}"><h4>{{$element->title}}</h4></a>
                 <p>
-                    Cholesterol is a waxy substance that accumulates on the walls of the arteries and plays an important role in the formation of hormones and vitamin D</p>
+                    {{\Illuminate\Support\Str::limit(strip_tags($element->body),100,'...')}}</p>
                 <ul class="stars">
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
@@ -174,97 +176,9 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="/img/blog/Heart_Blog_2.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="{{url('ArticleShow',2)}}"><h4>Healthy food for heart patients</h4></a>
-                <p>
-                   There may be beneficial foods for heart patients, and other foods harmful for heart patients, but a healthy diet for heart patients and heaslth day style...</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (21) </span>
-               
-              </div>
 
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="/img/blog/Heart_Blog_3.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="{{url('ArticleShow',3)}}"><h4>Methods for diagnosing heart diseases</h4></a>
-                <p>
-                    The heart is the most important organ of the human body, so stopping it from working leads to the cessation of the entire life from the body. Therefore, it is necessary to constantly check the heart.
-            </p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (36)</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="/img/blog/Heart_Blog_4.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="{{url('ArticleShow',4)}}"><h4>Food that strengthens the heart muscle</h4></a>
-                <p>
-                    There are some foods that strengthen the heart and improve its work due to the presence of some important nutrients for cardiovascular health. heart and brain diseases.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (48)</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="/img/blog/Heart_Blog_5.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="{{url('ArticleShow',5)}}"><h4>Tips for diabetics to prevent heart disease</h4></a>
-                <p>Most people with diabetes are afraid of blindness or gangrene, which is one of the complications of diabetes, but the greatest risk of complications from diabetes is heart and brain diseases.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-
-                </ul>
-                <span>Reviews (16)</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="/img/blog/Heart_Blog_6.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="{{url('ArticleShow',6)}}"><h4>The advantages and risks of X-ray imaging</h4></a>
-                <p>
-                    There are many advantages to MRI diagnostics and heart imaging compared to other methods of cardiac imaging such as ultrasound or CT scan. The magnetic resonance imaging of the heart .</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Reviews (32)</span>
-              </div>
-            </div>
-          </div>
+           @endforeach
+         
         </div>
       </div>
     </div>

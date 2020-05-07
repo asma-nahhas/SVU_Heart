@@ -30,7 +30,16 @@ class ArticleController extends Controller
 
      }
 
+    public function index2()
+    {
+        //
+        $data = DB::select('select * from articles order by created_at desc');
+          //  $data = Article::orderBy('created_at','desc')->paginate(8);
+        return view('index', compact('data'));
 
+
+
+     }
 
 
 
