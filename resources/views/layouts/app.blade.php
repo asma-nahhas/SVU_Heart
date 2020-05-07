@@ -38,7 +38,14 @@
     <link rel="stylesheet" href="css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
-        <script src="js/jquery-1.12.1.min.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+        
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/side/style.css">
+
+    <script src="js/jquery-1.12.1.min.js"></script>
     <!-- popper js -->
     <script src="js/popper.min.js"></script>
     <!-- bootstrap js -->
@@ -53,6 +60,11 @@
     <script src="js/mail-script.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
+
+    <script src="js/js/jquery.min.js"></script>
+    <script src="js/js/popper.js"></script>
+    <script src="js/js/bootstrap.min.js"></script>
+    <script src="js/js/main.js"></script>
 </head>
 <body>
     <div id="app">

@@ -2495,7 +2495,7 @@ ul {
 /**************** banner part css start ****************/
 /* line 2, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_banner.scss */
 .banner_part {
-  height: 935px;
+  height: 35px;
   position: relative;
   overflow: hidden;
   background-image: url(../img/banner_bg.png);
@@ -5968,12 +5968,12 @@ h1, h2, h3, h4, h5, h6 {
 .breadcrumb_part {
   position: relative;
   z-index: 1;
-  height: 400px;
+  height: 100;
 }
 
 /* line 10, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_breadcrumb.scss */
 .breadcrumb_part .breadcrumb_iner {
-  height: 400px;
+  height: 100px;
   width: 100%;
   display: table;
 }

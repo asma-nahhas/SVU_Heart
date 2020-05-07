@@ -1,4 +1,6 @@
 
+ 
+
   @extends("Header")
 
   @section("content")
@@ -25,16 +27,17 @@
             <div class="col-lg-8 posts-list">
                <div class="single-post">
                   <div class="feature-img">
-                     <img class="img-fluid" src="img/blog/blog_2.png" alt="">
+                     <img class="img-fluid" src="/img/blog/Heart_Blog_{{$postId ?? ''}}.jpg" alt="">
                   </div>
                   <div class="blog_details">
-                     <h2>Causes of heart disease
+                     <h2>{{$article->title ?? 'Causes of heart disease'}}
                      </h2>
                      <ul class="blog-info-link mt-3 mb-4">
                         <li><a href="#"><i class="far fa-user"></i> Heart, Health</a></li>
                         <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
                      </ul>
                      <p class="excert">
+                       {{$article->body ?? ''}} 
                      
                      One of the most common problems that many people around the world suffer from is irregular heartbeat.
                       The main causes of the heart rhythm disorder are the following:
@@ -78,7 +81,7 @@
                            class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                            <div class="thumb">
                               <a href="#">
-                                 <img class="img-fluid" src="img/post/preview.png" alt="">
+                                 <img class="img-fluid" src="/img/post/preview.png" alt="">
                               </a>
                            </div>
                            <div class="arrow">
@@ -108,7 +111,7 @@
                            </div>
                            <div class="thumb">
                               <a href="#">
-                                 <img class="img-fluid" src="img/post/next.png" alt="">
+                                 <img class="img-fluid" src="/img/post/next.png" alt="">
                               </a>
                            </div>
                         </div>

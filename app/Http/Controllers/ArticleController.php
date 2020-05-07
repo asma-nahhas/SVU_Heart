@@ -32,6 +32,10 @@ class ArticleController extends Controller
 
 
 
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -88,9 +92,15 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id=1)
     {
         //
+             //   return view('user.profile', ['user' => User::findOrFail($id)]);
+        return view('single-blog')->with(['postId'=>$id , 'article'=>Article::findOrFail($id)]);
+
+
+
+
     }
 
     /**

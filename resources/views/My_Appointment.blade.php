@@ -57,7 +57,7 @@ tr:nth-child(even) {
 @endif
         
         <div class="wrapper d-flex align-items-stretch">
-            <nav id="sidebar">
+         <nav id="sidebar">
                 <div class="custom-menu">
                     <button type="button" id="sidebarCollapse" class="btn btn-primary">
             </button>
@@ -72,12 +72,19 @@ tr:nth-child(even) {
           <li class="active">
             <a href="{{url('index')}}"><span class="fa fa-home mr-3"></span> Home</a>
           </li>
+            @if (Auth::user()->name=="admin")
           <li>
             <a href="{{url('Article')}}"><span class="fa fa-sticky-note-o mr-3"></span>Manage Articles</a>
           </li>
           <li>
             <a href="{{url('Appointment')}}"><span class="fa fa fa-heartbeat  mr-3"></span> Appointments</a>
           </li>
+          @endif
+         @if (Auth::user()->name!="admin")
+           <li>
+            <a href="{{url('My_Appointment')}}"><span class="fa fa fa-heartbeat  mr-3"></span>My Appointments</a>
+          </li>
+          @endif
           <li>
             <a href="{{url('about')}}"><span class="fa fa-info-circle mr-3"></span> About</a>
           </li>

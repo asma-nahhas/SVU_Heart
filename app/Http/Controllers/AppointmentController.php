@@ -27,6 +27,18 @@ class AppointmentController extends Controller
         return view('Appointment', compact('data'));
     }
 
+    public function userAppointment()
+    {
+        //
+        $user = Auth::user();
+        $id=Auth::user()->id;
+
+        $data = Appointment::where('user_id',$id)->orderBy('created_at','desc')->paginate(8);
+
+    
+        return view('My_Appointment', compact('data'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -46,6 +58,7 @@ if (Auth::check()) {
     $method=$request->input('method');
 
     if($method=='Expert'){
+
           $request->validate([
                     'captcha'=>'required|captcha'
                 ],['captcha.captcha'=>'Invalid captcha code.']);
@@ -147,7 +160,12 @@ if (Auth::check()) {
 
         $appointment->save();
 
-        return redirect('Appointment')->with('success','Data Saved');
+        if($user_id==1)
+            return redirect('Appointment')->with('success','Data Saved');
+        else
+            return redirect('My_Appointment')->with('success','Data Saved');
+
+
             }else{
         return redirect('login');
 

@@ -6,28 +6,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>medical</title>
-    <link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <!-- animate CSS -->
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="/css/animate.css">
     <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
     <!-- themify CSS -->
-    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="/css/themify-icons.css">
     <!-- flaticon CSS -->
-    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="/css/flaticon.css">
     <!-- magnific popup CSS -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
 
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
 
     <!-- nice select CSS -->
-    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="/css/nice-select.css">
     <!-- swiper CSS -->
-    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="/css/slick.css">
     <!-- style CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
 
 
@@ -101,7 +101,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="{{ url('index')}}"> <img src="img/logo.png" alt="logo"> </a>
+                        <a class="navbar-brand" href="{{ url('index')}}"> <img src="/img/logo.png" alt="logo"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">

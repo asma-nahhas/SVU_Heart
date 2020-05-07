@@ -60,9 +60,7 @@ Route::get('/blog', function () {
     return view('blog');
 });
 
-Route::get('/single-blog/{id?}', function ($id=1) {
-    return view('single-blog',compact('id'));
-});
+
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -85,11 +83,17 @@ Route::get('ArticleView', function () {
 
 
 
+/*Route::get('/ArticleShow/{postId?}', function ($postId=1) {
+    //
+
+return View::make('single-blog',compact('postId'));
+
+});*/
+
+Route::get('/ArticleShow/{id?}','ArticleController@show');
 
 
-
-
-Route::get('/My_Appointment','AppointmentController@index');
+Route::get('/My_Appointment','AppointmentController@userAppointment');
 
 
 Auth::routes();
@@ -98,6 +102,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/Article', 'ArticleController');
+
+
 
 Route::resource('/Appointment', 'AppointmentController');
 
