@@ -2495,7 +2495,7 @@ ul {
 /**************** banner part css start ****************/
 /* line 2, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_banner.scss */
 .banner_part {
-  height: 35px;
+  height: 700px;
   position: relative;
   overflow: hidden;
   background-image: url(../img/banner_bg.png);
@@ -2504,12 +2504,12 @@ ul {
   background-position: center;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 491px) {
   /* line 2, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_banner.scss */
   .banner_part {
     background-image: none;
     background-color: #f7f7f7;
-    height: 650px;
+    height: 450px;
   }
 }
 
