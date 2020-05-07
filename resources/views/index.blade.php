@@ -822,20 +822,40 @@
     },
     success:function(data){
 
+if(method=='Byes')
+{
+      if(data=='negative'){
+    
+
+                 swal("Result By BAYES", ", Your heart is good , stay at home :) ", "success");
+                $("#response").val("Your heart is good , stay at home :) ");
+            }
+      else
+      {
+               swal("Result By BAYES", ", Your heart is tired, you need to consult a doctor", "warning");
+              $("#response").val("Your heart is tired, you need to consult a doctor");
+
+        }
+      }else{
+
 
 
       if(data=='negative'){
     
 
-                 swal("Result By Selected Algorithm", ", Your heart is good , stay at home :) ", "success");
+                 swal("Result By ID3", ", Your heart is good , stay at home :) ", "success");
                 $("#response").val("Your heart is good , stay at home :) ");
             }
       else
       {
-               swal("Result By Selected Algorithm", ", Your heart is tired, you need to consult a doctor", "warning");
+               swal("Result By ID3", ", Your heart is tired, you need to consult a doctor", "warning");
               $("#response").val("Your heart is tired, you need to consult a doctor");
 
         }
+
+
+
+      }
 
 
     },
