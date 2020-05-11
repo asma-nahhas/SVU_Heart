@@ -26,6 +26,8 @@ class ArticleController extends Controller
           //  $data = Article::orderBy('created_at','desc')->paginate(8);
         return view('Article', compact('data'));
 
+//        return $data;
+
 
 
      }
@@ -63,9 +65,9 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
         if (Auth::check()) {
-        $this->validate($request,[
+       $this->validate($request,[
             'Name'=>'required',
             'Body'=>'required',
             'Image'=>'required|image|max:2048|mimes:jpg,png,JPG,jpeg,PNG'
@@ -86,7 +88,7 @@ class ArticleController extends Controller
         $article->save();
 
         return redirect('Article')->with('success','Data Saved');
-       }else{
+      }else{
         
         return redirect('login');
 
